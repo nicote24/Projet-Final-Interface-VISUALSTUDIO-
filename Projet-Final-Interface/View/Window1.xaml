@@ -1,0 +1,133 @@
+﻿<Window x:Class="Projet_Final_Interface.View.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_Final_Interface.View"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <ScrollViewer CanContentScroll="True">
+
+        <Grid >
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/backG.jpg"  Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid Margin="0,0,0,0"  Height="130" VerticalAlignment="top">
+                <Border BorderBrush="Black" BorderThickness="4" ></Border>
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="67,30,0,0" Name="textBlockGamerTag" Text="NOM :" VerticalAlignment="Top" Width="110" FontSize="30" FontFamily="Imprint MT Shadow" />
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="67,85,0,0" Text="Race :" VerticalAlignment="Top" Width="80" FontSize="15" FontFamily="Imprint MT Shadow" />
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="290,85,0,0" Text="Classe :" VerticalAlignment="Top" Width="80" FontSize="15" FontFamily="Imprint MT Shadow" />
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="520,85,0,0" Text="Genre :" VerticalAlignment="Top" Width="80" FontSize="15"  FontFamily="Imprint MT Shadow"/>
+                <TextBox Height="40" HorizontalAlignment="Left" Margin="182,30,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="222" Text="{Binding thePersonnage.Nom}" />
+                <Image Width="300" Height="90" Margin="425,0,50,40">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="300" UriSource="/images/logoReal.png" />
+                    </Image.Source>
+                </Image>
+                <ComboBox Height="25" HorizontalAlignment="Left" Margin="120,85,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeRace}"  >
+                </ComboBox>
+                <ComboBox Height="25" HorizontalAlignment="Left" Margin="350,85,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeClasse}" >
+
+                </ComboBox>
+                <ComboBox  Height="25" HorizontalAlignment="Left" Margin="580,85,0,0" VerticalAlignment="Top" Width="100">
+                    <ComboBoxItem>Homme</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">Femme</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+            <Grid Margin="0,128,0,0"  VerticalAlignment="top" HorizontalAlignment="Left" Width="400">
+                <Border BorderBrush="Black" BorderThickness="3" ></Border>
+                <TextBlock  Height="40" HorizontalAlignment="Left" Margin="50,0,0,0"  Text="CARACTERISTIQUES :" VerticalAlignment="Top" Width="340" FontSize="33" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,70,0,0"  Text="FORCE :" VerticalAlignment="Top" Width="190" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,63,0,0"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.Force}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,140,0,0"  Text="DEXTERITÉ :" VerticalAlignment="Top" Width="190" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,133,0,0"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.Dexterite}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,210,0,0"  Text="CONSTITUTION :" VerticalAlignment="Top" Width="207" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,203,0,0"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.Constitution}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,280,0,0"  Text="INTELLIGENCE :" VerticalAlignment="Top" Width="207" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,273,0,0"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.Intelligence}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,350,0,0"  Text="SAGESSE :" VerticalAlignment="Top" Width="207" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,343,0,0"  VerticalAlignment="Top" Width="50" FontSize="15"  Text="{Binding ThePersonnage.Sagesse}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,420,0,0"  Text="CHARISME :" VerticalAlignment="Top" Width="190" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,413,0,0"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.Charisme}" />
+                <TextBlock Height="40" HorizontalAlignment="Left" Margin="50,490,0,0"  Text="CLASSE ARMURE :" VerticalAlignment="Top" Width="230" FontSize="25" FontFamily="Imprint MT Shadow" />
+                <TextBox  Height="50" HorizontalAlignment="Left" Margin="300,483,0,20"  VerticalAlignment="Top" Width="50" FontSize="15" Text="{Binding ThePersonnage.ClasseArmure}" />
+            </Grid>
+            <Grid Margin="400,128,0,0"  VerticalAlignment="top" HorizontalAlignment="Left" Width="400">
+                <Border BorderBrush="Black" BorderThickness="1.5" ></Border>
+                <TextBlock  Height="40" HorizontalAlignment="Left" Margin="60,0,0,0"  Text="IDENTITÉE " VerticalAlignment="Top" Width="340" FontSize="33" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,50,0,0"  Text="Couleur Des Yeux : " VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,50,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.CouleurYeux}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,90,0,0"  Text="Couleur Des Cheveux : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,90,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.CouleurCheveux}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,130,0,0"  Text="Langue parlée : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow" ></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,130,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.Langues}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,170,0,0"  Text="Les Compétences : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,170,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.Competence}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,210,0,0"  Text="Poids En Kg : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,210,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.PoidsKg}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,250,0,0"  Text="Age : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,250,0,0"   VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.Age}"></TextBox>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="20,290,0,0"  Text="Taille : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBox Height="20" HorizontalAlignment="Left" Margin="185,290,0,20"  VerticalAlignment="Top" Width="130" FontSize="15" FontFamily="Imprint MT Shadow" Text="{Binding ThePersonnage.Taille}"></TextBox>
+            </Grid>
+            <Grid Margin="398,455,0,0"  VerticalAlignment="top" HorizontalAlignment="Left" Width="400" Height="226">
+                <Border BorderBrush="Black" BorderThickness="4" ></Border>
+                <TextBlock  Height="40" HorizontalAlignment="Left" Margin="60,0,0,0"  Text="BONUS " VerticalAlignment="Top" Width="340" FontSize="33" FontFamily="Imprint MT Shadow"></TextBlock>
+                <Image Width="200" Height="130" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,40,0,0">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="300" UriSource="/images/bouclier.png" />
+                    </Image.Source>
+                </Image>
+                <Image Width="200" Height="130" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,40,70,0">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="300" UriSource="/images/bouclier.png" />
+                    </Image.Source>
+                </Image>
+                <Image Width="200" Height="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,50,0">
+                    <Image.Source>
+                        <BitmapImage DecodePixelWidth="300" UriSource="/images/bouclier.png" />
+                    </Image.Source>
+                </Image>
+                <TextBlock Text="Reflex"  Width="200" Height="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="90,190,0,0" FontFamily="Imprint MT Shadow" FontSize="13"></TextBlock>
+                <TextBlock Text="Vigueur"  Width="200" Height="130" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,150,150,0" FontFamily="Imprint MT Shadow" FontSize="13"></TextBlock>
+                <TextBlock Text="Volonté"  Width="200" Height="130" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="240,150,0,0" FontFamily="Imprint MT Shadow" FontSize="13"></TextBlock>
+                <TextBox   Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,120,48,0" FontFamily="Imprint MT Shadow" FontSize="13" Text="{Binding ThePersonnage.BonusDexterite}"></TextBox>
+                <TextBox   Width="30" Height="30" HorizontalAlignment="Right"  VerticalAlignment="Top" Margin="0,80,120,0" FontFamily="Imprint MT Shadow" FontSize="13" Text="{Binding ThePersonnage.BonusVigeur}"></TextBox>
+                <TextBox  Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,233,0" FontFamily="Imprint MT Shadow" FontSize="13" Text="{Binding ThePersonnage.Volonte}"></TextBox>
+
+            </Grid>
+            <Grid Margin="0,680,0,0"  VerticalAlignment="top" HorizontalAlignment="Left" Width="310" Height="226">
+                <Border BorderBrush="Black" BorderThickness="4" ></Border>
+                <TextBlock  Height="40" HorizontalAlignment="Left" Margin="60,0,0,0"  Text="INFOS " VerticalAlignment="Top" Width="340" FontSize="33" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="50,60,0,0"  Text="Divinité : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="50,100,0,0"  Text="Alignement : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="50,140,0,0"  Text="Armure : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <TextBlock Height="20" HorizontalAlignment="Left" Margin="50,180,0,0"  Text="Arme : " VerticalAlignment="Top" Width="150" FontSize="15" FontFamily="Imprint MT Shadow"></TextBlock>
+                <ComboBox  Height="22" HorizontalAlignment="Left" Margin="180,60,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeDivinite}">
+
+                </ComboBox>
+                <ComboBox  Height="22" HorizontalAlignment="Left" Margin="180,100,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeAlignement}">
+                </ComboBox>
+                <ComboBox  Height="22" HorizontalAlignment="Left" Margin="180,140,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeArme}">
+                   
+                </ComboBox>
+                <ComboBox  Height="22" HorizontalAlignment="Left" Margin="180,180,0,0" VerticalAlignment="Top" Width="100" ItemsSource="{Binding ListeArmure}">
+                </ComboBox>
+            </Grid>
+            <Grid Margin="308,680,0,0"  VerticalAlignment="top" HorizontalAlignment="Left" Width="470" Height="226">
+                <Border BorderBrush="Black" BorderThickness="4" ></Border>
+                <TextBlock  Height="40" HorizontalAlignment="Left" Margin="60,0,0,0"  Text="AJOUTER " VerticalAlignment="Top" Width="340" FontSize="33" FontFamily="Imprint MT Shadow"></TextBlock>
+                <Button Command="{Binding RandomForceCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,60,0,0" Content="Force"></Button>
+                <Button Command="{Binding RandomDexteriteCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,60,0,0" Content="Dextérité"></Button>
+                <Button Command="{Binding RandomConstitutionCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,60,0,0" Content="Constitution"></Button>
+                <Button Command="{Binding RandomIntelligenceCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,120,0,0" Content="Intelligence"></Button>
+                <Button Command="{Binding RandomSagesseCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,120,0,0" Content="Sagesse"></Button>
+                <Button Command="{Binding RandomCharismeCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,120,0,0" Content="Charisme"></Button>
+                <Button Command="{Binding RandomForceCommand}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,180,0,0" Content="Ajout Arme"></Button>
+                <Button Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,180,0,0" Content="Ajout Armure"></Button>
+                <Button Command="{Binding}" Width="100" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,180,0,0" Content="Sauvegarder" Foreground="Red" ></Button>
+            </Grid>
+        </Grid>
+
+    </ScrollViewer>
+</Window>
